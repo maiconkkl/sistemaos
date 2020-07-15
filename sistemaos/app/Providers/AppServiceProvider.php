@@ -13,6 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind('path.public', function() {
+            $dir = str_replace('sistemaos','',base_path());
+            return $dir.'/www';
+        });
     }
 
     /**
