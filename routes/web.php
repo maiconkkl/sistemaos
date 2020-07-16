@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function (){
     Route::resource('/usuarios', 'UsersController', ['except' => ['show', 'create', 'store']]);
     Route::resource('/revendas', 'RevendasController');
