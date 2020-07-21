@@ -18,10 +18,12 @@
                             </thead>
                             <tbody>
                             @foreach($modulos as $modulo)
-                                <td>{{ $modulo->id }}</td>
-                                <td>{{ $modulo->nome }}</td>
-                                <td>{{ $modulo->software->software_name }}</td>
-                                <td></td>
+                                <tr>
+                                    <td>{{ $modulo->id }}</td>
+                                    <td>{{ $modulo->nome }}</td>
+                                    <td>{{ $modulo->software->software_name }}</td>
+                                    <td>.</td>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>

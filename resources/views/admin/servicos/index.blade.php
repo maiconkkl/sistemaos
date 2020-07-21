@@ -19,11 +19,13 @@
                             </thead>
                             <tbody>
                             @foreach($servicos as $servico)
-                                <td>{{ $servico->id }}</td>
-                                <td>{{ $servico->nome }}</td>
-                                <td>{{ $servico->modulo->nome }}</td>
-                                <td>{{ $servico->software->software_name }}</td>
-                                <td></td>
+                                <tr>
+                                    <td>{{ $servico->id }}</td>
+                                    <td>{{ $servico->nome }}</td>
+                                    <td>{{ $servico->modulo->nome }}</td>
+                                    <td>{{ $servico->software->software_name }}</td>
+                                    <td></td>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>

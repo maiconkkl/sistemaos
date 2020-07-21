@@ -72,6 +72,7 @@ class RevendasController extends Controller
                 $telefone->phone = $this->soNumero($request->phone[$x]);
                 $telefone->save();
             }
+
             for ($x = 0; $x < count($request->documento); $x++) {
                 $documentos = new Documentos;
                 $documentos->empresas_id = $empresa->id;
