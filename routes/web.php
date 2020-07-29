@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-
 Route::get('/', 'HomeController@index')->name('home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function (){
     Route::resource('/usuarios', 'UsersController', ['except' => ['show', 'create', 'store']]);
@@ -25,6 +24,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function (){
     Route::resource('/software', 'SoftwareController');
     Route::resource('/modulos', 'SoftwareModulosController');
     Route::resource('/servicos', 'SoftwareServicosController');
+    Route::get('chat', 'ChatsController@index');
+    Route::get('messages', 'ChatsController@fetchMessages');
+    Route::post('messages', 'ChatsController@sendMessage');
 });
-
 

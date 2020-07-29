@@ -52,7 +52,10 @@ class User extends Authenticatable
         }
         return false;
     }
-
+    public function messages()
+    {
+        return $this->hasMany('App\Message', 'user_id', 'id');
+    }
     public function hasRole($role){
         if($this->roles()->where('key', $role)->first()) {
             return true;
